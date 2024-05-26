@@ -2,11 +2,11 @@ Feature: Firma Electrónica Avanzada
 
 Scenario: Acceso a la firma electrónica
     Given que el usuario se encuentra en la pantalla de "registro".
-    And el sistema muestra un botón "Registrar" abajo del label "Firma electrónica"
-    When el usuario presiona el botón
-    Then el sistema abre una pantalla de la "Firma Electrónica"
+    And el sistema muestra un botón "Registrar" abajo del label "Firma electrónica".
+    When el usuario presiona el botón.
+    Then el sistema abre una pantalla de la "Firma Electrónica".
     And muestra un apartado grande de dibujo
-    And también muestra un botón "Seleccionar Archivo"
+    And también muestra un botón "Seleccionar Archivo".
     And también muestra un botón de "Guardar" en la parte final.
 
 

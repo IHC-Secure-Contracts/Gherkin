@@ -2,12 +2,12 @@ Feature: Registro de usuario
 
 
 Scenario Outline: Registro exitoso con cuenta de red social
-Dado que el usuario se encuentra en la página de registro.
-Cuando el ciudadano selecciona la opción "Continuar con Google" o "Continuar con Facebook".
-Y el usuario inicia sesión en su <cuenta de Google o Facebook>.
-Entonces el sistema crea una nueva cuenta de ciudadano vinculada a la <cuenta de Google o Facebook>.
-Y el sistema muestra un <mensaje de confirmacion> de registro exitoso.
-Y el sistema redirige al usuario a la página de "Captura de datos".
+Given que el usuario se encuentra en la página de registro.
+When el ciudadano selecciona la opción "Continuar con Google" o "Continuar con Facebook".
+And el usuario inicia sesión en su <cuenta de Google o Facebook>.
+Then el sistema crea una nueva cuenta de ciudadano vinculada a la <cuenta de Google o Facebook>.
+And el sistema muestra un <mensaje de confirmacion> de registro exitoso.
+And el sistema redirige al usuario a la página de "Captura de datos".
 
 Examples: Cuenta
     |  cuenta de Google o Facebook  |
@@ -20,11 +20,11 @@ Examples: Mensaje
 
 
 Scenario Outline: Registro fallido con cuenta de red social.
-Dado que el usuario se encuentra en la página de registro.
-Cuando el usuario selecciona la opción "Continuar con Google" o "Continuar con Facebook".
-Y ocurre un error en la autenticación.
-Entonces el sistema muestra un <mensaje de error>.
-Y el sistema lo redirige de nuevo a la página de "registro" para intentar de nuevo.
+Given que el usuario se encuentra en la página de registro.
+When el usuario selecciona la opción "Continuar con Google" o "Continuar con Facebook".
+And ocurre un error en la autenticación.
+Then el sistema muestra un <mensaje de error>.
+And lo redirige de nuevo a la página de "registro" para intentar de nuevo.
 
 Examples: Mensaje
     | mensaje de error                       |
@@ -32,14 +32,14 @@ Examples: Mensaje
 
 
 Scenario Outline: Registro exitoso con correo
-Dado que el usuario se encuentra en la página de "registro".
-Y el sistema muestra los campos de <correo>, <contrasena> y <repite contrasena>.
-Y también muestra la opción "Siguiente".
-Cuando el ciudadano complete los campos.
-Y presione la opción.
-Entonces el sistema crea una nueva cuenta de ciudadano vinculada al correo.
-Y el sistema muestra un <mensaje de confirmacion>.
-Y el sistema redirige al usuario a la página de "Captura de datos".
+Given que el usuario se encuentra en la página de "registro".
+And el sistema muestra los campos de <correo>, <contrasena> y <repite contrasena>.
+And también muestra la opción "Siguiente".
+When el ciudadano complete los campos.
+And presione la opción.
+Then el sistema crea una nueva cuenta de ciudadano vinculada al correo.
+And el sistema muestra un <mensaje de confirmacion>.
+And el sistema redirige al usuario a la página de "Captura de datos".
 
 Examples: Cuenta
     |  correo              | contrasena      |  repite contrasena  |
@@ -51,14 +51,14 @@ Examples: Mensaje
 
 
 Scenario Outline:  Registro fallido con correo
-Dado que el usuario se encuentra en la página de "registro".
-Y el sistema muestra los campos de <correo>, <contrasena> y <repite contrasena>.
-Y también muestra la opción "Siguiente".
-Cuando el ciudadano complete los campos.
-Y presione la opción.
-Y ocurre un error en la autenticación.
-Entonces el sistema muestra un <mensaje de error>.
-Y el sistema lo redirige de nuevo a la página de "registro" para intentar de nuevo.
+Given que el usuario se encuentra en la página de "registro".
+And el sistema muestra los campos de <correo>, <contrasena> y <repite contrasena>.
+And también muestra la opción "Siguiente".
+When el ciudadano complete los campos.
+And presione la opción.
+And ocurre un error en la autenticación.
+Then el sistema muestra un <mensaje de error>.
+And el sistema lo redirige de nuevo a la página de "registro" para intentar de nuevo.
 
 Examples: Cuenta
     |  correo              | contrasena      |  repite contrasena  |
@@ -70,12 +70,12 @@ Examples: Mensaje
 
 
 Scenario Outline: Visualización de captura de datos
-Dado que el sistema muestra el botón "Siguiente".
-Y el usuario se registra con una <red social o su correo>.
-Cuando el usuario presiona el botón.
-Entonces el sistema muestra los campos en tres <etapas>.
-Y muestra un botón de "Registrar firma".
-Y también muestra al final un botón "Enviar".
+Given que el sistema muestra el botón "Siguiente".
+And el usuario se registra con una <red social o su correo>.
+When el usuario presiona el botón.
+Then el sistema muestra los campos en tres <etapas>.
+And muestra un botón de "Registrar firma".
+And también muestra al final un botón "Enviar".
 
 Examples: Cuenta
     | red social o su correo   |
@@ -90,13 +90,13 @@ Examples: Etapas
 
 
 Scenario Outline: Captura de datos exitosa
-Dado que el sistema muestra los campos en tres <etapas>.
-Y también muestra al final un botón "Enviar".
-Cuando el usuarios complete los campos.
-Y presiona el botón.
-Y el sistema valida que toda la información esté correcta.
-Entonces el sistema crea un nuevo usuario.
-Y lo redirige a la página de "inicio de sesión" para ingresar sus credenciales.
+Given que el sistema muestra los campos en tres <etapas>.
+And también muestra al final un botón "Enviar".
+When el usuarios complete los campos.
+And presiona el botón.
+And el sistema valida que toda la información esté correcta.
+Then el sistema crea un nuevo usuario.
+And lo redirige a la página de "inicio de sesión" para ingresar sus credenciales.
 
 Examples: Etapas
     | Etapas             |
