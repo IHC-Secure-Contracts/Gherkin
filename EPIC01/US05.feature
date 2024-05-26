@@ -35,7 +35,7 @@ Scenario Outline: Actualización fallida de información de perfil
 
 Examples: informacion
     | nombre  | correo electrónico      | teléfono    | género    | fecha de nacimiento | dirección         |
-    | Juan    | juan@example.com         | 958623479   | Masculino | 1990-01-01          | Calle Falsa 123   |
+    | Juan    | juan@example.com        | 958623479   | Masculino | 1990-01-01          | Calle Falsa 123   |
     | Ana     | ana@example.com         | 923145677   | Femenino  | 1985-05-05          | Avenida Real 456  |
 
 Examples: Mensaje
