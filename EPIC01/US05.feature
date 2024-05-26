@@ -16,9 +16,9 @@ Scenario Outline: Actualización exitosa de información de perfil
     Then el sistema muestra un <mensaje de confirmacion>.
 
 Examples: informacion
-    | nombre  | correo electrónico      | teléfono   | género    | fecha de nacimiento | dirección         |
-    | Juan    | juan@example.com        | 555-1234   | Masculino | 1990-01-01          | Calle Falsa 123   |
-    | Ana     | ana@example.com         | 555-5678   | Femenino  | 1985-05-05          | Avenida Real 456  |
+    | nombre  | correo electrónico      | teléfono    | género    | fecha de nacimiento | dirección         |
+    | Juan    | juan@example.com        | 999225323   | Masculino | 1990-01-01          | Calle Falsa 123   |
+    | Ana     | ana@example.com         | 994568123   | Femenino  | 1985-05-05          | Avenida Real 456  |
 
 Examples: Mensaje
     | mensaje de confirmacion              |
@@ -34,9 +34,9 @@ Scenario Outline: Actualización fallida de información de perfil
     And no actualiza la información del usuario.
 
 Examples: informacion
-    | nombre  | correo electrónico      | teléfono       | género    | fecha de nacimiento | dirección         |
-    | Juan    | no es un correo         | 555-1234       | Masculino | 1990-01-01          | Calle Falsa 123   |
-    | Ana     | ana@example.com         | no es teléfono | Femenino  | 1985-05-05          | Avenida Real 456  |
+    | nombre  | correo electrónico      | teléfono    | género    | fecha de nacimiento | dirección         |
+    | Juan    | juan@example.com         | 958623479   | Masculino | 1990-01-01          | Calle Falsa 123   |
+    | Ana     | ana@example.com         | 923145677   | Femenino  | 1985-05-05          | Avenida Real 456  |
 
 Examples: Mensaje
     | mensaje de error                                      |
