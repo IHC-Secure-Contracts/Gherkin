@@ -2,10 +2,10 @@ Feature: Acceso a  un documento  específico de un contrato
 
 
 Scenario Outline: Acceso a un documento específico
-Dado que el usuario se encuentra en un contrato específico.
-Y el sistema muestra todos los documentos en formato tarjetas.
-Cuando el usuario selecciona un <documento> específico.
-Entonces el sistema le muestra en una nueva página el documento seleccionado.
+Given que el usuario se encuentra en un contrato específico.
+And el sistema muestra todos los documentos en formato tarjetas.
+When el usuario selecciona un <documento> específico.
+Then el sistema le muestra en una nueva página el documento seleccionado.
 
 
 Examples: Documento
