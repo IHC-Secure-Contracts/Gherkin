@@ -2,15 +2,15 @@ Feature: Acceso a documentos contractuales
 
 
 Scenario Outline: Acceso a la página “Mis contratos”
-Dado que el usuario se encuentra en la página principal de “Contratos”
-Cuando el usuario selecciona un contrato específico de la lista
-Entonces el sistema muestra todos los documentos asociados a ese contrato en una nueva página
-Y el usuario puede visualizar y analizar cada documento
+Given que el usuario se encuentra en la página principal de “Contratos”
+When el usuario selecciona un contrato específico de la lista
+Then el sistema muestra todos los documentos asociados a ese contrato en una nueva página
+And el usuario puede visualizar y analizar cada documento
 
 Scenario Outline: Fallo al acceder a los documentos contractuales
-Dado que el usuario intenta acceder a los documentos  de un contrato específico
-Cuando el sistema detecta un error en la carga de los documentos
-Entonces el sistema informa al usuario del error con un <mensaje> adecuado
+Given que el usuario intenta acceder a los documentos  de un contrato específico
+When el sistema detecta un error en la carga de los documentos
+Then el sistema informa al usuario del error con un <mensaje> adecuado
 
 
 Examples: Mensaje
