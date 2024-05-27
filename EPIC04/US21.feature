@@ -18,12 +18,19 @@ Feature: Acceso a la calificación
     When el usuario completa los campos
     And presiona el botón "Enviar"
     Then el sistema registra la calificación
-    Examples:
-      | calificacion | comentario                  |
-      | 5            | "Servicio excelente"        |
-      | 4            | "Muy buen servicio"         |
-      | 3            | "Servicio aceptable"        |
-
+    
+    Examples: Calificaciones
+      | calificacion |
+      | 5            |
+      | 4            |
+      | 3            |
+      
+    Examples: Comentarios
+      | comentario                  |
+      | "Servicio excelente"        |
+      | "Muy buen servicio"         |
+      | "Servicio aceptable"        |
+      
   Scenario Outline: Calificación exitosa de cancelación de contrato
     Given que el sistema redirige al usuario a la "página de calificación"
     And muestra los campos de <Razón> y <Motivo>
@@ -31,8 +38,13 @@ Feature: Acceso a la calificación
     When el usuario completa los campos
     And presiona el botón "Enviar"
     Then el sistema registra la calificación
-    Examples:
-      | razon           | motivo                |
-      | "Cancelación"   | "Cambios en el plan"  |
-      | "Finalización"  | "Contratista no adecuado" |
-
+    
+    Examples: Razones
+      | razon           |
+      | "Cancelación"   |
+      | "Finalización"  |
+      
+    Examples: Motivos
+      | motivo                |
+      | "Cambios en el plan"  |
+      | "Contratista no adecuado" |
