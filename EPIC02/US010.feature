@@ -15,9 +15,9 @@ Examples: Documento
     
 
 Scenario Outline: Fallo al acceder a un documento contractual
-Dado que el usuario intenta acceder a un documento  en particular.
-Cuando el sistema detecta un error en la carga del documento.
-Entonces el sistema informa al usuario del error con un <mensaje>.
+Given que el usuario intenta acceder a un documento  en particular.
+When el sistema detecta un error en la carga del documento.
+Then el sistema informa al usuario del error con un <mensaje>.
 
 
 Examples: Mensaje
